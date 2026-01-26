@@ -1,0 +1,25 @@
+project:
+  type: book
+
+book:
+  title: "Metodos_Numericos_Libro"
+  author: "Norah Jones"
+  date: "01/25/2026"
+  chapters:
+    - index.qmd
+    - intro.qmd
+    - summary.qmd
+    - references.qmd
+
+bibliography: references.bib
+
+format:
+  html:
+    theme:
+      - cosmo
+      - brand
+  pdf:
+    documentclass: scrreprt
+
+editor: visual
+
