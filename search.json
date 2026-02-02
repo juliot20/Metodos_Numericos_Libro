@@ -154,7 +154,7 @@
     "href": "capitulo1.html#propagación-en-operaciones-básicas",
     "title": "4  Capítulo 1. Error en el Cálculo Numérico",
     "section": "10.2 Propagación en operaciones básicas",
-    "text": "10.2 Propagación en operaciones básicas\n\nSuma y resta: se suman los errores absolutos.\nProducto y cociente: se suman los errores relativos.\n\n\nEjemplo\nSi: \\(x = 10 \\pm 0.1, \\quad y = 5 \\pm 0.05\\)\nentonces: \\(xy = 50 \\pm 50 \\left(\\frac{0.1}{10} + \\frac{0.05}{5}\\right) = 50 \\pm 1\\)",
+    "text": "10.2 Propagación en operaciones básicas\n\nSuma y resta: se suman los errores absolutos.\nProducto y cociente: se suman los errores relativos.\n\n\n\n\n\n\n\nEjemplo\nSi: \\(x = 10 \\pm 0.1, \\quad y = 5 \\pm 0.05\\)\nentonces: \\(xy = 50 \\pm 50 \\left(\\frac{0.1}{10} + \\frac{0.05}{5}\\right) = 50 \\pm 1\\)",
     "crumbs": [
       "<span class='chapter-number'>4</span>  <span class='chapter-title'>Capítulo 1. Error en el Cálculo Numérico</span>"
     ]
