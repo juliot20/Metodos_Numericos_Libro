@@ -20,6 +20,136 @@
     ]
   },
   {
+    "objectID": "capitulo1.html",
+    "href": "capitulo1.html",
+    "title": "4  Capítulo 1. Error en el Cálculo Numérico",
+    "section": "",
+    "text": "5 Introducción\nEn el análisis matemático tradicional se trabaja, en muchos casos, con valores exactos y expresiones analíticas cerradas. Sin embargo, en la práctica científica, ingenieril y computacional, los datos disponibles suelen provenir de mediciones, aproximaciones o cálculos realizados mediante computadoras, lo que introduce inevitablemente errores.\nEl análisis numérico se ocupa del estudio de algoritmos para obtener soluciones aproximadas a problemas matemáticos, así como del análisis del error asociado a dichas aproximaciones. Incluso cuando un método es matemáticamente correcto, su implementación computacional puede producir resultados poco fiables si no se controla adecuadamente la propagación del error.\nEn este capítulo se introducen los conceptos fundamentales relacionados con: - la representación de los números reales, - la exactitud y la precisión, - el almacenamiento interno de los números en la computadora, - los distintos tipos de error numérico, - la pérdida de cifras significativas, - la notación de orden de error (notación de Landau), - y la propagación del error.\nEstos conceptos serán esenciales para comprender y evaluar los métodos numéricos estudiados en capítulos posteriores.",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Capítulo 1. Error en el Cálculo Numérico</span>"
+    ]
+  },
+  {
+    "objectID": "capitulo1.html#valores-exactos-y-valores-aproximados",
+    "href": "capitulo1.html#valores-exactos-y-valores-aproximados",
+    "title": "4  Capítulo 1. Error en el Cálculo Numérico",
+    "section": "6.1 Valores exactos y valores aproximados",
+    "text": "6.1 Valores exactos y valores aproximados\nUn valor exacto es aquel que representa una cantidad sin error alguno. Ejemplos de valores exactos son: - números enteros definidos, - fracciones racionales expresadas de forma exacta, - constantes matemáticas definidas simbólicamente, como \\(\\pi\\) o \\(\\sqrt{2}\\).\nUn valor aproximado es una representación numérica limitada de un valor real verdadero. En computación, prácticamente todos los números reales se manejan como valores aproximados debido a las restricciones de almacenamiento y cálculo.\nEn general, si \\(x\\) representa el valor verdadero y \\(\\tilde{x}\\) su aproximación, se tiene: \\(\\tilde{x} \\approx x\\)",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Capítulo 1. Error en el Cálculo Numérico</span>"
+    ]
+  },
+  {
+    "objectID": "capitulo1.html#exactitud",
+    "href": "capitulo1.html#exactitud",
+    "title": "4  Capítulo 1. Error en el Cálculo Numérico",
+    "section": "6.2 Exactitud",
+    "text": "6.2 Exactitud\nLa exactitud mide qué tan cerca está un valor aproximado del valor real verdadero.\nEl error absoluto se define como: \\(E_a = \\|x - \\tilde{x}\\|\\)\ny cuantifica la desviación total entre el valor real y su aproximación.\n\nEjemplo\nSea \\(x = 3.14159265\\) el valor verdadero de \\(\\pi\\) y \\(\\tilde{x} = 3.14\\) una aproximación.\nEl error absoluto es: \\(E_a = \\|3.14159265 - 3.14\\| = 0.00159265\\)",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Capítulo 1. Error en el Cálculo Numérico</span>"
+    ]
+  },
+  {
+    "objectID": "capitulo1.html#precisión",
+    "href": "capitulo1.html#precisión",
+    "title": "4  Capítulo 1. Error en el Cálculo Numérico",
+    "section": "6.3 Precisión",
+    "text": "6.3 Precisión\nLa precisión indica el número de cifras significativas con las que se expresa un número, independientemente de su cercanía al valor real.\nPor ejemplo: - \\(3.14\\) tiene tres cifras significativas, - \\(3.141592\\) tiene siete cifras significativas.\nEs importante destacar que exactitud y precisión no son conceptos equivalentes: - un valor puede ser muy preciso pero poco exacto, - o poco preciso pero razonablemente exacto.",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Capítulo 1. Error en el Cálculo Numérico</span>"
+    ]
+  },
+  {
+    "objectID": "capitulo1.html#error-relativo",
+    "href": "capitulo1.html#error-relativo",
+    "title": "4  Capítulo 1. Error en el Cálculo Numérico",
+    "section": "6.4 Error relativo",
+    "text": "6.4 Error relativo\nEl error relativo se define como: \\(E_r = \\frac{|x - \\tilde{x}|}{|x|}\\)\nEste tipo de error es especialmente útil cuando se comparan errores en cantidades de distinta magnitud.\n\nEjemplo\nSi \\(x = 1000\\) y \\(\\tilde{x} = 999\\), entonces: \\(E_a = 1, \\quad E_r = \\frac{1}{1000} = 0.001\\)",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Capítulo 1. Error en el Cálculo Numérico</span>"
+    ]
+  },
+  {
+    "objectID": "capitulo1.html#representación-binaria",
+    "href": "capitulo1.html#representación-binaria",
+    "title": "4  Capítulo 1. Error en el Cálculo Numérico",
+    "section": "7.1 Representación binaria",
+    "text": "7.1 Representación binaria\nLas computadoras representan la información internamente en sistema binario, es decir, en base \\(2\\).\nUn número entero positivo se expresa como: \\((d_n d\\_{n-1} \\dots d_0)_2 = \\sum_{i=0}^{n} d_i 2^i, \\quad d_i \\in {0,1}\\)\n\nEjemplo\nEl número decimal \\(13\\) se representa en binario como: \\(13_{10} = 1101_2\\)\n\nMuchos números decimales no poseen una representación binaria finita, lo que da lugar a errores de aproximación.",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Capítulo 1. Error en el Cálculo Numérico</span>"
+    ]
+  },
+  {
+    "objectID": "capitulo1.html#números-de-punto-flotante",
+    "href": "capitulo1.html#números-de-punto-flotante",
+    "title": "4  Capítulo 1. Error en el Cálculo Numérico",
+    "section": "7.2 Números de punto flotante",
+    "text": "7.2 Números de punto flotante\nLos números reales se almacenan usualmente en formato de punto flotante, compuesto por: - un signo, - una mantisa, - un exponente.\nLa forma general es: \\(x = \\pm (0.m_1 m_2 \\dots m_t)_2 \\times 2^e\\)\nEste formato permite representar números muy grandes y muy pequeños, pero introduce errores de redondeo inevitables.\n\nEjemplo clásico\nEl número decimal \\(0.1\\) no tiene representación binaria exacta, ya que: \\(0.1_{10} = 0.0001100110011\\ldots_2\\)",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Capítulo 1. Error en el Cálculo Numérico</span>"
+    ]
+  },
+  {
+    "objectID": "capitulo1.html#error-de-redondeo",
+    "href": "capitulo1.html#error-de-redondeo",
+    "title": "4  Capítulo 1. Error en el Cálculo Numérico",
+    "section": "8.1 Error de redondeo",
+    "text": "8.1 Error de redondeo\nEl error de redondeo aparece cuando un número real se aproxima usando un número finito de cifras.\nSi se redondea un número a \\(n\\) cifras decimales, el error máximo es del orden de: \\(\\frac{1}{2} \\times 10^{-n}\\)\n\nEjemplo\nAl redondear \\(1.236\\) a dos decimales se obtiene \\(1.24\\), con un error máximo de \\(0.005\\).",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Capítulo 1. Error en el Cálculo Numérico</span>"
+    ]
+  },
+  {
+    "objectID": "capitulo1.html#tipos-de-redondeo",
+    "href": "capitulo1.html#tipos-de-redondeo",
+    "title": "4  Capítulo 1. Error en el Cálculo Numérico",
+    "section": "8.2 Tipos de redondeo",
+    "text": "8.2 Tipos de redondeo\nLos principales métodos de redondeo son: - redondeo hacia abajo, - redondeo hacia arriba, - redondeo al número par más cercano (utilizado para reducir sesgos acumulativos).",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Capítulo 1. Error en el Cálculo Numérico</span>"
+    ]
+  },
+  {
+    "objectID": "capitulo1.html#pérdida-de-cifras-significativas",
+    "href": "capitulo1.html#pérdida-de-cifras-significativas",
+    "title": "4  Capítulo 1. Error en el Cálculo Numérico",
+    "section": "8.3 Pérdida de cifras significativas",
+    "text": "8.3 Pérdida de cifras significativas\nLa pérdida de cifras significativas (o cancelación) ocurre cuando se restan números muy cercanos entre sí.\n\nEjemplo\nConsidérese: \\(x = 1.0000001, \\quad y = 1.0000000\\) Entonces: \\(x - y = 0.0000001\\)\nSi los números se almacenan con pocas cifras significativas, el resultado puede perder completamente su precisión.\n\nEste fenómeno es una fuente importante de inestabilidad numérica.",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Capítulo 1. Error en el Cálculo Numérico</span>"
+    ]
+  },
+  {
+    "objectID": "capitulo1.html#idea-general",
+    "href": "capitulo1.html#idea-general",
+    "title": "4  Capítulo 1. Error en el Cálculo Numérico",
+    "section": "10.1 Idea general",
+    "text": "10.1 Idea general\nCuando un valor aproximado se utiliza como entrada en un cálculo posterior, su error se propaga.\nSi: \\(y = f(x), \\quad x = \\tilde{x} + \\delta x\\)\nentonces, para errores pequeños: \\(\\delta y \\approx f'(x)\\delta x\\)",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Capítulo 1. Error en el Cálculo Numérico</span>"
+    ]
+  },
+  {
+    "objectID": "capitulo1.html#propagación-en-operaciones-básicas",
+    "href": "capitulo1.html#propagación-en-operaciones-básicas",
+    "title": "4  Capítulo 1. Error en el Cálculo Numérico",
+    "section": "10.2 Propagación en operaciones básicas",
+    "text": "10.2 Propagación en operaciones básicas\n\nSuma y resta: se suman los errores absolutos.\nProducto y cociente: se suman los errores relativos.\n\n\nEjemplo\nSi: \\(x = 10 \\pm 0.1, \\quad y = 5 \\pm 0.05\\)\nentonces: \\(xy = 50 \\pm 50 \\left(\\frac{0.1}{10} + \\frac{0.05}{5}\\right) = 50 \\pm 1\\)",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Capítulo 1. Error en el Cálculo Numérico</span>"
+    ]
+  },
+  {
+    "objectID": "capitulo1.html#estabilidad-numérica",
+    "href": "capitulo1.html#estabilidad-numérica",
+    "title": "4  Capítulo 1. Error en el Cálculo Numérico",
+    "section": "10.3 Estabilidad numérica",
+    "text": "10.3 Estabilidad numérica\nUn algoritmo es numéricamente estable si los errores no se amplifican de manera significativa durante el proceso de cálculo.\nDos algoritmos matemáticamente equivalentes pueden presentar comportamientos numéricos muy distintos al implementarse en una computadora.",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Capítulo 1. Error en el Cálculo Numérico</span>"
+    ]
+  },
+  {
     "objectID": "references.html",
     "href": "references.html",
     "title": "References",

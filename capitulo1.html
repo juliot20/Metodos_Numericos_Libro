@@ -6,8 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Tu nombre">
 
-<title>4&nbsp; capitulo1 – Metodos_Numericos_Libro</title>
+<title>4&nbsp; Capítulo 1. Error en el Cálculo Numérico – Metodos_Numericos_Libro</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -71,6 +72,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -83,7 +113,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./capitulo1.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">capitulo1</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./capitulo1.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Capítulo 1. Error en el Cálculo Numérico</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -131,7 +161,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./capitulo1.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">capitulo1</span></span></a>
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Capítulo 1. Error en el Cálculo Numérico</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -145,21 +175,59 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#introducción" id="toc-introducción" class="nav-link active" data-scroll-target="#introducción"><span class="header-section-number">5</span> Introducción</a></li>
+  <li><a href="#valores-reales-exactitud-y-precisión" id="toc-valores-reales-exactitud-y-precisión" class="nav-link" data-scroll-target="#valores-reales-exactitud-y-precisión"><span class="header-section-number">6</span> Valores reales: exactitud y precisión</a>
+  <ul class="collapse">
+  <li><a href="#valores-exactos-y-valores-aproximados" id="toc-valores-exactos-y-valores-aproximados" class="nav-link" data-scroll-target="#valores-exactos-y-valores-aproximados"><span class="header-section-number">6.1</span> Valores exactos y valores aproximados</a></li>
+  <li><a href="#exactitud" id="toc-exactitud" class="nav-link" data-scroll-target="#exactitud"><span class="header-section-number">6.2</span> Exactitud</a></li>
+  <li><a href="#precisión" id="toc-precisión" class="nav-link" data-scroll-target="#precisión"><span class="header-section-number">6.3</span> Precisión</a></li>
+  <li><a href="#error-relativo" id="toc-error-relativo" class="nav-link" data-scroll-target="#error-relativo"><span class="header-section-number">6.4</span> Error relativo</a></li>
+  </ul></li>
+  <li><a href="#almacenamiento-interno-de-los-números" id="toc-almacenamiento-interno-de-los-números" class="nav-link" data-scroll-target="#almacenamiento-interno-de-los-números"><span class="header-section-number">7</span> Almacenamiento interno de los números</a>
+  <ul class="collapse">
+  <li><a href="#representación-binaria" id="toc-representación-binaria" class="nav-link" data-scroll-target="#representación-binaria"><span class="header-section-number">7.1</span> Representación binaria</a></li>
+  <li><a href="#números-de-punto-flotante" id="toc-números-de-punto-flotante" class="nav-link" data-scroll-target="#números-de-punto-flotante"><span class="header-section-number">7.2</span> Números de punto flotante</a></li>
+  </ul></li>
+  <li><a href="#error-numérico" id="toc-error-numérico" class="nav-link" data-scroll-target="#error-numérico"><span class="header-section-number">8</span> Error numérico</a>
+  <ul class="collapse">
+  <li><a href="#error-de-redondeo" id="toc-error-de-redondeo" class="nav-link" data-scroll-target="#error-de-redondeo"><span class="header-section-number">8.1</span> Error de redondeo</a></li>
+  <li><a href="#tipos-de-redondeo" id="toc-tipos-de-redondeo" class="nav-link" data-scroll-target="#tipos-de-redondeo"><span class="header-section-number">8.2</span> Tipos de redondeo</a></li>
+  <li><a href="#pérdida-de-cifras-significativas" id="toc-pérdida-de-cifras-significativas" class="nav-link" data-scroll-target="#pérdida-de-cifras-significativas"><span class="header-section-number">8.3</span> Pérdida de cifras significativas</a></li>
+  </ul></li>
+  <li><a href="#notación-o-de-landau" id="toc-notación-o-de-landau" class="nav-link" data-scroll-target="#notación-o-de-landau"><span class="header-section-number">9</span> Notación O de Landau</a></li>
+  <li><a href="#propagación-del-error" id="toc-propagación-del-error" class="nav-link" data-scroll-target="#propagación-del-error"><span class="header-section-number">10</span> Propagación del error</a>
+  <ul class="collapse">
+  <li><a href="#idea-general" id="toc-idea-general" class="nav-link" data-scroll-target="#idea-general"><span class="header-section-number">10.1</span> Idea general</a></li>
+  <li><a href="#propagación-en-operaciones-básicas" id="toc-propagación-en-operaciones-básicas" class="nav-link" data-scroll-target="#propagación-en-operaciones-básicas"><span class="header-section-number">10.2</span> Propagación en operaciones básicas</a></li>
+  <li><a href="#estabilidad-numérica" id="toc-estabilidad-numérica" class="nav-link" data-scroll-target="#estabilidad-numérica"><span class="header-section-number">10.3</span> Estabilidad numérica</a></li>
+  </ul></li>
+  <li><a href="#conclusiones" id="toc-conclusiones" class="nav-link" data-scroll-target="#conclusiones"><span class="header-section-number">11</span> Conclusiones</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">capitulo1</span></h1>
+<h1 class="title"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Capítulo 1. Error en el Cálculo Numérico</span></h1>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Tu nombre </p>
+          </div>
+  </div>
     
   
     
@@ -170,8 +238,154 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<section id="introducción" class="level1" data-number="5">
+<h1 data-number="5"><span class="header-section-number">5</span> Introducción</h1>
+<p>En el análisis matemático tradicional se trabaja, en muchos casos, con valores exactos y expresiones analíticas cerradas. Sin embargo, en la práctica científica, ingenieril y computacional, los datos disponibles suelen provenir de <strong>mediciones</strong>, <strong>aproximaciones</strong> o <strong>cálculos realizados mediante computadoras</strong>, lo que introduce inevitablemente errores.</p>
+<p>El <strong>análisis numérico</strong> se ocupa del estudio de algoritmos para obtener soluciones aproximadas a problemas matemáticos, así como del análisis del <strong>error</strong> asociado a dichas aproximaciones. Incluso cuando un método es matemáticamente correcto, su implementación computacional puede producir resultados poco fiables si no se controla adecuadamente la propagación del error.</p>
+<p>En este capítulo se introducen los conceptos fundamentales relacionados con: - la representación de los números reales, - la exactitud y la precisión, - el almacenamiento interno de los números en la computadora, - los distintos tipos de error numérico, - la pérdida de cifras significativas, - la notación de orden de error (notación de Landau), - y la propagación del error.</p>
+<p>Estos conceptos serán esenciales para comprender y evaluar los métodos numéricos estudiados en capítulos posteriores.</p>
+<hr>
+</section>
+<section id="valores-reales-exactitud-y-precisión" class="level1" data-number="6">
+<h1 data-number="6"><span class="header-section-number">6</span> Valores reales: exactitud y precisión</h1>
+<section id="valores-exactos-y-valores-aproximados" class="level2" data-number="6.1">
+<h2 data-number="6.1" class="anchored" data-anchor-id="valores-exactos-y-valores-aproximados"><span class="header-section-number">6.1</span> Valores exactos y valores aproximados</h2>
+<p>Un <strong>valor exacto</strong> es aquel que representa una cantidad sin error alguno. Ejemplos de valores exactos son: - números enteros definidos, - fracciones racionales expresadas de forma exacta, - constantes matemáticas definidas simbólicamente, como <span class="math inline">\(\pi\)</span> o <span class="math inline">\(\sqrt{2}\)</span>.</p>
+<p>Un <strong>valor aproximado</strong> es una representación numérica limitada de un valor real verdadero. En computación, prácticamente todos los números reales se manejan como valores aproximados debido a las restricciones de almacenamiento y cálculo.</p>
+<p>En general, si <span class="math inline">\(x\)</span> representa el valor verdadero y <span class="math inline">\(\tilde{x}\)</span> su aproximación, se tiene: <span class="math inline">\(\tilde{x} \approx x\)</span></p>
+<hr>
+</section>
+<section id="exactitud" class="level2" data-number="6.2">
+<h2 data-number="6.2" class="anchored" data-anchor-id="exactitud"><span class="header-section-number">6.2</span> Exactitud</h2>
+<p>La <strong>exactitud</strong> mide qué tan cerca está un valor aproximado del valor real verdadero.</p>
+<p>El <strong>error absoluto</strong> se define como: <span class="math inline">\(E_a = \|x - \tilde{x}\|\)</span></p>
+<p>y cuantifica la desviación total entre el valor real y su aproximación.</p>
+<div class="example">
+<p><strong>Ejemplo</strong></p>
+<p>Sea <span class="math inline">\(x = 3.14159265\)</span> el valor verdadero de <span class="math inline">\(\pi\)</span> y <span class="math inline">\(\tilde{x} = 3.14\)</span> una aproximación.<br>
+El error absoluto es: <span class="math inline">\(E_a = \|3.14159265 - 3.14\| = 0.00159265\)</span></p>
+</div>
+<hr>
+</section>
+<section id="precisión" class="level2" data-number="6.3">
+<h2 data-number="6.3" class="anchored" data-anchor-id="precisión"><span class="header-section-number">6.3</span> Precisión</h2>
+<p>La <strong>precisión</strong> indica el número de cifras significativas con las que se expresa un número, independientemente de su cercanía al valor real.</p>
+<p>Por ejemplo: - <span class="math inline">\(3.14\)</span> tiene tres cifras significativas, - <span class="math inline">\(3.141592\)</span> tiene siete cifras significativas.</p>
+<p>Es importante destacar que <strong>exactitud y precisión no son conceptos equivalentes</strong>: - un valor puede ser muy preciso pero poco exacto, - o poco preciso pero razonablemente exacto.</p>
+<hr>
+</section>
+<section id="error-relativo" class="level2" data-number="6.4">
+<h2 data-number="6.4" class="anchored" data-anchor-id="error-relativo"><span class="header-section-number">6.4</span> Error relativo</h2>
+<p>El <strong>error relativo</strong> se define como: <span class="math inline">\(E_r = \frac{|x - \tilde{x}|}{|x|}\)</span></p>
+<p>Este tipo de error es especialmente útil cuando se comparan errores en cantidades de distinta magnitud.</p>
+<div class="example">
+<p><strong>Ejemplo</strong></p>
+<p>Si <span class="math inline">\(x = 1000\)</span> y <span class="math inline">\(\tilde{x} = 999\)</span>, entonces: <span class="math inline">\(E_a = 1, \quad E_r = \frac{1}{1000} = 0.001\)</span></p>
+</div>
+<hr>
+</section>
+</section>
+<section id="almacenamiento-interno-de-los-números" class="level1" data-number="7">
+<h1 data-number="7"><span class="header-section-number">7</span> Almacenamiento interno de los números</h1>
+<section id="representación-binaria" class="level2" data-number="7.1">
+<h2 data-number="7.1" class="anchored" data-anchor-id="representación-binaria"><span class="header-section-number">7.1</span> Representación binaria</h2>
+<p>Las computadoras representan la información internamente en <strong>sistema binario</strong>, es decir, en base <span class="math inline">\(2\)</span>.<br>
+Un número entero positivo se expresa como: <span class="math inline">\((d_n d\_{n-1} \dots d_0)_2 = \sum_{i=0}^{n} d_i 2^i, \quad d_i \in {0,1}\)</span></p>
+<div class="example">
+<p><strong>Ejemplo</strong></p>
+<p>El número decimal <span class="math inline">\(13\)</span> se representa en binario como: <span class="math inline">\(13_{10} = 1101_2\)</span></p>
+</div>
+<p>Muchos números decimales no poseen una representación binaria finita, lo que da lugar a errores de aproximación.</p>
+<hr>
+</section>
+<section id="números-de-punto-flotante" class="level2" data-number="7.2">
+<h2 data-number="7.2" class="anchored" data-anchor-id="números-de-punto-flotante"><span class="header-section-number">7.2</span> Números de punto flotante</h2>
+<p>Los números reales se almacenan usualmente en formato de <strong>punto flotante</strong>, compuesto por: - un signo, - una mantisa, - un exponente.</p>
+<p>La forma general es: <span class="math inline">\(x = \pm (0.m_1 m_2 \dots m_t)_2 \times 2^e\)</span></p>
+<p>Este formato permite representar números muy grandes y muy pequeños, pero introduce <strong>errores de redondeo</strong> inevitables.</p>
+<div class="example">
+<p><strong>Ejemplo clásico</strong></p>
+<p>El número decimal <span class="math inline">\(0.1\)</span> no tiene representación binaria exacta, ya que: <span class="math inline">\(0.1_{10} = 0.0001100110011\ldots_2\)</span></p>
+</div>
+<hr>
+</section>
+</section>
+<section id="error-numérico" class="level1" data-number="8">
+<h1 data-number="8"><span class="header-section-number">8</span> Error numérico</h1>
+<section id="error-de-redondeo" class="level2" data-number="8.1">
+<h2 data-number="8.1" class="anchored" data-anchor-id="error-de-redondeo"><span class="header-section-number">8.1</span> Error de redondeo</h2>
+<p>El <strong>error de redondeo</strong> aparece cuando un número real se aproxima usando un número finito de cifras.</p>
+<p>Si se redondea un número a <span class="math inline">\(n\)</span> cifras decimales, el error máximo es del orden de: <span class="math inline">\(\frac{1}{2} \times 10^{-n}\)</span></p>
+<div class="example">
+<p><strong>Ejemplo</strong></p>
+<p>Al redondear <span class="math inline">\(1.236\)</span> a dos decimales se obtiene <span class="math inline">\(1.24\)</span>, con un error máximo de <span class="math inline">\(0.005\)</span>.</p>
+</div>
+<hr>
+</section>
+<section id="tipos-de-redondeo" class="level2" data-number="8.2">
+<h2 data-number="8.2" class="anchored" data-anchor-id="tipos-de-redondeo"><span class="header-section-number">8.2</span> Tipos de redondeo</h2>
+<p>Los principales métodos de redondeo son: - redondeo hacia abajo, - redondeo hacia arriba, - redondeo al número par más cercano (utilizado para reducir sesgos acumulativos).</p>
+<hr>
+</section>
+<section id="pérdida-de-cifras-significativas" class="level2" data-number="8.3">
+<h2 data-number="8.3" class="anchored" data-anchor-id="pérdida-de-cifras-significativas"><span class="header-section-number">8.3</span> Pérdida de cifras significativas</h2>
+<p>La <strong>pérdida de cifras significativas</strong> (o cancelación) ocurre cuando se restan números muy cercanos entre sí.</p>
+<div class="example">
+<p><strong>Ejemplo</strong></p>
+<p>Considérese: <span class="math inline">\(x = 1.0000001, \quad y = 1.0000000\)</span> Entonces: <span class="math inline">\(x - y = 0.0000001\)</span></p>
+<p>Si los números se almacenan con pocas cifras significativas, el resultado puede perder completamente su precisión.</p>
+</div>
+<p>Este fenómeno es una fuente importante de inestabilidad numérica.</p>
+<hr>
+</section>
+</section>
+<section id="notación-o-de-landau" class="level1" data-number="9">
+<h1 data-number="9"><span class="header-section-number">9</span> Notación O de Landau</h1>
+<p>La <strong>notación de Landau</strong> se utiliza para describir el orden de magnitud de un error.</p>
+<p>Se dice que: <span class="math inline">\(f(h) = O(h^n) \quad \text{si} \quad \lim\_{h \to 0} \frac{f(h)}{h^n} = C\)</span></p>
+<p>donde <span class="math inline">\(C\)</span> es una constante finita.</p>
+<p>Esta notación permite comparar la eficiencia y precisión de distintos métodos numéricos.</p>
+<div class="example">
+<p><strong>Ejemplo</strong></p>
+<p>Un método con error <span class="math inline">\(O(h^2)\)</span> es, para <span class="math inline">\(h\)</span> pequeño, más preciso que uno con error <span class="math inline">\(O(h)\)</span>.</p>
+</div>
+<hr>
+</section>
+<section id="propagación-del-error" class="level1" data-number="10">
+<h1 data-number="10"><span class="header-section-number">10</span> Propagación del error</h1>
+<section id="idea-general" class="level2" data-number="10.1">
+<h2 data-number="10.1" class="anchored" data-anchor-id="idea-general"><span class="header-section-number">10.1</span> Idea general</h2>
+<p>Cuando un valor aproximado se utiliza como entrada en un cálculo posterior, su error se propaga.</p>
+<p>Si: <span class="math inline">\(y = f(x), \quad x = \tilde{x} + \delta x\)</span></p>
+<p>entonces, para errores pequeños: <span class="math inline">\(\delta y \approx f'(x)\delta x\)</span></p>
+<hr>
+</section>
+<section id="propagación-en-operaciones-básicas" class="level2" data-number="10.2">
+<h2 data-number="10.2" class="anchored" data-anchor-id="propagación-en-operaciones-básicas"><span class="header-section-number">10.2</span> Propagación en operaciones básicas</h2>
+<ul>
+<li><strong>Suma y resta</strong>: se suman los errores absolutos.</li>
+<li><strong>Producto y cociente</strong>: se suman los errores relativos.</li>
+</ul>
+<div class="example">
+<p><strong>Ejemplo</strong></p>
+<p>Si: <span class="math inline">\(x = 10 \pm 0.1, \quad y = 5 \pm 0.05\)</span></p>
+<p>entonces: <span class="math inline">\(xy = 50 \pm 50 \left(\frac{0.1}{10} + \frac{0.05}{5}\right) = 50 \pm 1\)</span></p>
+</div>
+<hr>
+</section>
+<section id="estabilidad-numérica" class="level2" data-number="10.3">
+<h2 data-number="10.3" class="anchored" data-anchor-id="estabilidad-numérica"><span class="header-section-number">10.3</span> Estabilidad numérica</h2>
+<p>Un algoritmo es <strong>numéricamente estable</strong> si los errores no se amplifican de manera significativa durante el proceso de cálculo.</p>
+<p>Dos algoritmos matemáticamente equivalentes pueden presentar comportamientos numéricos muy distintos al implementarse en una computadora.</p>
+<hr>
+</section>
+</section>
+<section id="conclusiones" class="level1" data-number="11">
+<h1 data-number="11"><span class="header-section-number">11</span> Conclusiones</h1>
+<p>El estudio del error es un componente esencial del análisis numérico. Comprender su origen, su comportamiento y su propagación permite: - evaluar la confiabilidad de los resultados computacionales, - comparar métodos numéricos, - diseñar algoritmos estables y eficientes.</p>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
