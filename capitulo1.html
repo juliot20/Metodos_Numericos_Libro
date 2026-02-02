@@ -337,7 +337,31 @@ Un número entero positivo se expresa como: <span class="math inline">\((d_n d\_
 <section id="números-de-punto-flotante" class="level2" data-number="7.2">
 <h2 data-number="7.2" class="anchored" data-anchor-id="números-de-punto-flotante"><span class="header-section-number">7.2</span> Números de punto flotante</h2>
 <p>Los números reales se almacenan usualmente en formato de <strong>punto flotante</strong>, compuesto por: - un signo, - una mantisa, - un exponente.</p>
-<p>La forma general es: <span class="math inline">\(x = \pm (0.m_1 m_2 \dots m_t)_2 \times 2^e\)</span></p>
+<p>La forma es: <span class="math inline">\(x = \pm (0.m_1 m_2 \dots m_t)_2 \times 2^e\)</span></p>
+<p>En general</p>
+<div class="callout callout-style-simple callout-note">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>Un número real <span class="math inline">\(x\)</span> tiene una representación punto flotante normalizada</p>
+<p><span class="math display">\[x=\pm \alpha\times\beta^e\]</span></p>
+<p>con <span class="math inline">\(\frac{1}{\beta}&lt;|\alpha|&lt;1\)</span></p>
+<p><span class="math inline">\(\alpha\)</span> tiene un número de dígitos limitados, <span class="math inline">\(\beta\)</span> es la base y <span class="math inline">\(e\)</span> es el exponente que hace cambiar de posición al punto decimal.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-simple callout-note">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>El conjunto de los números en punto flotante se le llama conjunto de números de máquina.</p>
+</div>
+</div>
+</div>
 <p>Este formato permite representar números muy grandes y muy pequeños, pero introduce <strong>errores de redondeo</strong> inevitables.</p>
 <div class="callout callout-style-simple callout-tip">
 <div class="callout-body d-flex">
