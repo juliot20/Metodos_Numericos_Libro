@@ -268,7 +268,7 @@ window.Quarto = {
 <p>La <strong>exactitud</strong> mide qué tan cerca está un valor aproximado del valor real verdadero.</p>
 <p>El <strong>error absoluto</strong> se define como: <span class="math inline">\(E_a = \|x - \tilde{x}\|\)</span></p>
 <p>y cuantifica la desviación total entre el valor real y su aproximación.</p>
-<div class="example">
+<div class="callout-example">
 <p><strong>Ejemplo</strong></p>
 <p>Sea <span class="math inline">\(x = 3.14159265\)</span> el valor verdadero de <span class="math inline">\(\pi\)</span> y <span class="math inline">\(\tilde{x} = 3.14\)</span> una aproximación.<br>
 El error absoluto es: <span class="math inline">\(E_a = \|3.14159265 - 3.14\| = 0.00159265\)</span></p>
@@ -286,7 +286,7 @@ El error absoluto es: <span class="math inline">\(E_a = \|3.14159265 - 3.14\| = 
 <h2 data-number="6.4" class="anchored" data-anchor-id="error-relativo"><span class="header-section-number">6.4</span> Error relativo</h2>
 <p>El <strong>error relativo</strong> se define como: <span class="math inline">\(E_r = \frac{|x - \tilde{x}|}{|x|}\)</span></p>
 <p>Este tipo de error es especialmente útil cuando se comparan errores en cantidades de distinta magnitud.</p>
-<div class="example">
+<div class="callout-example">
 <p><strong>Ejemplo</strong></p>
 <p>Si <span class="math inline">\(x = 1000\)</span> y <span class="math inline">\(\tilde{x} = 999\)</span>, entonces: <span class="math inline">\(E_a = 1, \quad E_r = \frac{1}{1000} = 0.001\)</span></p>
 </div>
@@ -300,7 +300,7 @@ El error absoluto es: <span class="math inline">\(E_a = \|3.14159265 - 3.14\| = 
 <h2 data-number="7.1" class="anchored" data-anchor-id="representación-binaria"><span class="header-section-number">7.1</span> Representación binaria</h2>
 <p>Las computadoras representan la información internamente en <strong>sistema binario</strong>, es decir, en base <span class="math inline">\(2\)</span>.<br>
 Un número entero positivo se expresa como: <span class="math inline">\((d_n d\_{n-1} \dots d_0)_2 = \sum_{i=0}^{n} d_i 2^i, \quad d_i \in {0,1}\)</span></p>
-<div class="example">
+<div class="callout-example">
 <p><strong>Ejemplo</strong></p>
 <p>El número decimal <span class="math inline">\(13\)</span> se representa en binario como: <span class="math inline">\(13_{10} = 1101_2\)</span></p>
 </div>
@@ -312,7 +312,7 @@ Un número entero positivo se expresa como: <span class="math inline">\((d_n d\_
 <p>Los números reales se almacenan usualmente en formato de <strong>punto flotante</strong>, compuesto por: - un signo, - una mantisa, - un exponente.</p>
 <p>La forma general es: <span class="math inline">\(x = \pm (0.m_1 m_2 \dots m_t)_2 \times 2^e\)</span></p>
 <p>Este formato permite representar números muy grandes y muy pequeños, pero introduce <strong>errores de redondeo</strong> inevitables.</p>
-<div class="example">
+<div class="callout-example">
 <p><strong>Ejemplo clásico</strong></p>
 <p>El número decimal <span class="math inline">\(0.1\)</span> no tiene representación binaria exacta, ya que: <span class="math inline">\(0.1_{10} = 0.0001100110011\ldots_2\)</span></p>
 </div>
@@ -325,7 +325,7 @@ Un número entero positivo se expresa como: <span class="math inline">\((d_n d\_
 <h2 data-number="8.1" class="anchored" data-anchor-id="error-de-redondeo"><span class="header-section-number">8.1</span> Error de redondeo</h2>
 <p>El <strong>error de redondeo</strong> aparece cuando un número real se aproxima usando un número finito de cifras.</p>
 <p>Si se redondea un número a <span class="math inline">\(n\)</span> cifras decimales, el error máximo es del orden de: <span class="math inline">\(\frac{1}{2} \times 10^{-n}\)</span></p>
-<div class="example">
+<div class="callout-example">
 <p><strong>Ejemplo</strong></p>
 <p>Al redondear <span class="math inline">\(1.236\)</span> a dos decimales se obtiene <span class="math inline">\(1.24\)</span>, con un error máximo de <span class="math inline">\(0.005\)</span>.</p>
 </div>
@@ -339,7 +339,7 @@ Un número entero positivo se expresa como: <span class="math inline">\((d_n d\_
 <section id="pérdida-de-cifras-significativas" class="level2" data-number="8.3">
 <h2 data-number="8.3" class="anchored" data-anchor-id="pérdida-de-cifras-significativas"><span class="header-section-number">8.3</span> Pérdida de cifras significativas</h2>
 <p>La <strong>pérdida de cifras significativas</strong> (o cancelación) ocurre cuando se restan números muy cercanos entre sí.</p>
-<div class="example">
+<div class="callout-example">
 <p><strong>Ejemplo</strong></p>
 <p>Considérese: <span class="math inline">\(x = 1.0000001, \quad y = 1.0000000\)</span> Entonces: <span class="math inline">\(x - y = 0.0000001\)</span></p>
 <p>Si los números se almacenan con pocas cifras significativas, el resultado puede perder completamente su precisión.</p>
@@ -354,7 +354,7 @@ Un número entero positivo se expresa como: <span class="math inline">\((d_n d\_
 <p>Se dice que: <span class="math inline">\(f(h) = O(h^n) \quad \text{si} \quad \lim\_{h \to 0} \frac{f(h)}{h^n} = C\)</span></p>
 <p>donde <span class="math inline">\(C\)</span> es una constante finita.</p>
 <p>Esta notación permite comparar la eficiencia y precisión de distintos métodos numéricos.</p>
-<div class="example">
+<div class="callout-example">
 <p><strong>Ejemplo</strong></p>
 <p>Un método con error <span class="math inline">\(O(h^2)\)</span> es, para <span class="math inline">\(h\)</span> pequeño, más preciso que uno con error <span class="math inline">\(O(h)\)</span>.</p>
 </div>
@@ -375,7 +375,7 @@ Un número entero positivo se expresa como: <span class="math inline">\((d_n d\_
 <li><strong>Suma y resta</strong>: se suman los errores absolutos.</li>
 <li><strong>Producto y cociente</strong>: se suman los errores relativos.</li>
 </ul>
-<div class="example">
+<div class="callout-example">
 <p><strong>Ejemplo</strong></p>
 <p>Si: <span class="math inline">\(x = 10 \pm 0.1, \quad y = 5 \pm 0.05\)</span></p>
 <p>entonces: <span class="math inline">\(xy = 50 \pm 50 \left(\frac{0.1}{10} + \frac{0.05}{5}\right) = 50 \pm 1\)</span></p>
