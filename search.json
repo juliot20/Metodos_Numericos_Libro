@@ -84,7 +84,7 @@
     "href": "capitulo1.html#error-relativo",
     "title": "4  Capítulo 1. Error en el Cálculo Numérico",
     "section": "6.4 Error relativo",
-    "text": "6.4 Error relativo\nEl error relativo se define como: \\(E_r = \\frac{|x - \\tilde{x}|}{|x|}\\)\nEste tipo de error es especialmente útil cuando se comparan errores en cantidades de distinta magnitud.\n\nEjemplo\nSi \\(x = 1000\\) y \\(\\tilde{x} = 999\\), entonces: \\(E_a = 1, \\quad E_r = \\frac{1}{1000} = 0.001\\)",
+    "text": "6.4 Error relativo\nEl error relativo se define como: \\(E_r = \\frac{|x - \\tilde{x}|}{|x|}\\)\nEste tipo de error es especialmente útil cuando se comparan errores en cantidades de distinta magnitud.\n\nEjemplo\nSi \\(x = 1000\\) y \\(\\tilde{x} = 999\\), entonces: \\(E_a = 1, \\quad E_r = \\frac{1}{1000} = 0.001\\)\n\ngf",
     "crumbs": [
       "<span class='chapter-number'>4</span>  <span class='chapter-title'>Capítulo 1. Error en el Cálculo Numérico</span>"
     ]
