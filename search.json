@@ -64,7 +64,7 @@
     "href": "capitulo1.html#exactitud",
     "title": "4  Capítulo 1. Error en el Cálculo Numérico",
     "section": "6.2 Exactitud",
-    "text": "6.2 Exactitud\nLa exactitud mide qué tan cerca está un valor aproximado del valor real verdadero.\nEl error absoluto se define como: \\(E_a = \\|x - \\tilde{x}\\|\\)\ny cuantifica la desviación total entre el valor real y su aproximación.\n\nEjemplo\nSea \\(x = 3.14159265\\) el valor verdadero de \\(\\pi\\) y \\(\\tilde{x} = 3.14\\) una aproximación.\nEl error absoluto es: \\(E_a = \\|3.14159265 - 3.14\\| = 0.00159265\\)",
+    "text": "6.2 Exactitud\nLa exactitud mide qué tan cerca está un valor aproximado del valor real verdadero.\nEl error absoluto se define como: \\(E_a = \\|x - \\tilde{x}\\|\\)\ny cuantifica la desviación total entre el valor real y su aproximación.\n\n\n\n\n\n\nEjemplo\nSea \\(x = 3.14159265\\) el valor verdadero de \\(\\pi\\) y \\(\\tilde{x} = 3.14\\) una aproximación.\nEl error absoluto es: \\(E_a = \\|3.14159265 - 3.14\\| = 0.00159265\\)",
     "crumbs": [
       "<span class='chapter-number'>4</span>  <span class='chapter-title'>Capítulo 1. Error en el Cálculo Numérico</span>"
     ]
@@ -84,7 +84,7 @@
     "href": "capitulo1.html#error-relativo",
     "title": "4  Capítulo 1. Error en el Cálculo Numérico",
     "section": "6.4 Error relativo",
-    "text": "6.4 Error relativo\nEl error relativo se define como: \\(E_r = \\frac{|x - \\tilde{x}|}{|x|}\\)\nEste tipo de error es especialmente útil cuando se comparan errores en cantidades de distinta magnitud.\n\nEjemplo\nSi \\(x = 1000\\) y \\(\\tilde{x} = 999\\), entonces: \\(E_a = 1, \\quad E_r = \\frac{1}{1000} = 0.001\\)\n\ngf",
+    "text": "6.4 Error relativo\nEl error relativo se define como: \\(E_r = \\frac{|x - \\tilde{x}|}{|x|}\\)\nEste tipo de error es especialmente útil cuando se comparan errores en cantidades de distinta magnitud.\n\n\n\n\n\n\nEjemplo\nSi \\(x = 1000\\) y \\(\\tilde{x} = 999\\), entonces: \\(E_a = 1, \\quad E_r = \\frac{1}{1000} = 0.001\\)\n\n\n\ngf",
     "crumbs": [
       "<span class='chapter-number'>4</span>  <span class='chapter-title'>Capítulo 1. Error en el Cálculo Numérico</span>"
     ]
@@ -94,7 +94,7 @@
     "href": "capitulo1.html#representación-binaria",
     "title": "4  Capítulo 1. Error en el Cálculo Numérico",
     "section": "7.1 Representación binaria",
-    "text": "7.1 Representación binaria\nLas computadoras representan la información internamente en sistema binario, es decir, en base \\(2\\).\nUn número entero positivo se expresa como: \\((d_n d\\_{n-1} \\dots d_0)_2 = \\sum_{i=0}^{n} d_i 2^i, \\quad d_i \\in {0,1}\\)\n\nEjemplo\nEl número decimal \\(13\\) se representa en binario como: \\(13_{10} = 1101_2\\)\n\nMuchos números decimales no poseen una representación binaria finita, lo que da lugar a errores de aproximación.",
+    "text": "7.1 Representación binaria\nLas computadoras representan la información internamente en sistema binario, es decir, en base \\(2\\).\nUn número entero positivo se expresa como: \\((d_n d\\_{n-1} \\dots d_0)_2 = \\sum_{i=0}^{n} d_i 2^i, \\quad d_i \\in {0,1}\\)\n\n\n\n\n\n\nEjemplo\nEl número decimal \\(13\\) se representa en binario como: \\(13_{10} = 1101_2\\)\n\n\n\nMuchos números decimales no poseen una representación binaria finita, lo que da lugar a errores de aproximación.",
     "crumbs": [
       "<span class='chapter-number'>4</span>  <span class='chapter-title'>Capítulo 1. Error en el Cálculo Numérico</span>"
     ]
@@ -104,7 +104,7 @@
     "href": "capitulo1.html#números-de-punto-flotante",
     "title": "4  Capítulo 1. Error en el Cálculo Numérico",
     "section": "7.2 Números de punto flotante",
-    "text": "7.2 Números de punto flotante\nLos números reales se almacenan usualmente en formato de punto flotante, compuesto por: - un signo, - una mantisa, - un exponente.\nLa forma general es: \\(x = \\pm (0.m_1 m_2 \\dots m_t)_2 \\times 2^e\\)\nEste formato permite representar números muy grandes y muy pequeños, pero introduce errores de redondeo inevitables.\n\nEjemplo clásico\nEl número decimal \\(0.1\\) no tiene representación binaria exacta, ya que: \\(0.1_{10} = 0.0001100110011\\ldots_2\\)",
+    "text": "7.2 Números de punto flotante\nLos números reales se almacenan usualmente en formato de punto flotante, compuesto por: - un signo, - una mantisa, - un exponente.\nLa forma general es: \\(x = \\pm (0.m_1 m_2 \\dots m_t)_2 \\times 2^e\\)\nEste formato permite representar números muy grandes y muy pequeños, pero introduce errores de redondeo inevitables.\n\n\n\n\n\n\nEjemplo clásico\nEl número decimal \\(0.1\\) no tiene representación binaria exacta, ya que: \\(0.1_{10} = 0.0001100110011\\ldots_2\\)",
     "crumbs": [
       "<span class='chapter-number'>4</span>  <span class='chapter-title'>Capítulo 1. Error en el Cálculo Numérico</span>"
     ]
@@ -114,7 +114,7 @@
     "href": "capitulo1.html#error-de-redondeo",
     "title": "4  Capítulo 1. Error en el Cálculo Numérico",
     "section": "8.1 Error de redondeo",
-    "text": "8.1 Error de redondeo\nEl error de redondeo aparece cuando un número real se aproxima usando un número finito de cifras.\nSi se redondea un número a \\(n\\) cifras decimales, el error máximo es del orden de: \\(\\frac{1}{2} \\times 10^{-n}\\)\n\nEjemplo\nAl redondear \\(1.236\\) a dos decimales se obtiene \\(1.24\\), con un error máximo de \\(0.005\\).",
+    "text": "8.1 Error de redondeo\nEl error de redondeo aparece cuando un número real se aproxima usando un número finito de cifras.\nSi se redondea un número a \\(n\\) cifras decimales, el error máximo es del orden de: \\(\\frac{1}{2} \\times 10^{-n}\\)\n\n\n\n\n\n\nEjemplo\nAl redondear \\(1.236\\) a dos decimales se obtiene \\(1.24\\), con un error máximo de \\(0.005\\).",
     "crumbs": [
       "<span class='chapter-number'>4</span>  <span class='chapter-title'>Capítulo 1. Error en el Cálculo Numérico</span>"
     ]
@@ -134,7 +134,7 @@
     "href": "capitulo1.html#pérdida-de-cifras-significativas",
     "title": "4  Capítulo 1. Error en el Cálculo Numérico",
     "section": "8.3 Pérdida de cifras significativas",
-    "text": "8.3 Pérdida de cifras significativas\nLa pérdida de cifras significativas (o cancelación) ocurre cuando se restan números muy cercanos entre sí.\n\nEjemplo\nConsidérese: \\(x = 1.0000001, \\quad y = 1.0000000\\) Entonces: \\(x - y = 0.0000001\\)\nSi los números se almacenan con pocas cifras significativas, el resultado puede perder completamente su precisión.\n\nEste fenómeno es una fuente importante de inestabilidad numérica.",
+    "text": "8.3 Pérdida de cifras significativas\nLa pérdida de cifras significativas (o cancelación) ocurre cuando se restan números muy cercanos entre sí.\n\n\n\n\n\n\nEjemplo\nConsidérese: \\(x = 1.0000001, \\quad y = 1.0000000\\) Entonces: \\(x - y = 0.0000001\\)\nSi los números se almacenan con pocas cifras significativas, el resultado puede perder completamente su precisión.\n\n\n\nEste fenómeno es una fuente importante de inestabilidad numérica.",
     "crumbs": [
       "<span class='chapter-number'>4</span>  <span class='chapter-title'>Capítulo 1. Error en el Cálculo Numérico</span>"
     ]
