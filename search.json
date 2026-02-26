@@ -94,7 +94,7 @@
     "href": "capitulo1.html#representación-binaria",
     "title": "4  Capítulo 1. Error en el Cálculo Numérico",
     "section": "7.1 Representación binaria",
-    "text": "7.1 Representación binaria\nLas computadoras representan la información internamente en sistema binario, es decir, en base \\(2\\).\nUn número entero positivo se expresa como: \\((d_n d\\_{n-1} \\dots d_0)_2 = \\sum_{i=0}^{n} d_i 2^i, \\quad d_i \\in {0,1}\\)\n\n\n\n\n\n\nEjemplo\nEl número decimal \\(13\\) se representa en binario como: \\(13_{10} = 1101_2\\)\n\n\n\nMuchos números decimales no poseen una representación binaria finita, lo que da lugar a errores de aproximación.",
+    "text": "7.1 Representación binaria\nLas computadoras representan la información internamente en sistema binario, es decir, en base \\(2\\).\nUn número entero positivo se expresa como: \\((d_n d_{n-1} \\dots d_0)_2 = \\sum_{i=0}^{n} d_i 2^i, \\quad d_i \\in {0,1}\\)\n\n\n\n\n\n\nEjemplo\nEl número decimal \\(13\\) se representa en binario como: \\(13_{10} = 1101_2\\)\n\n\n\nMuchos números decimales no poseen una representación binaria finita, lo que da lugar a errores de aproximación.",
     "crumbs": [
       "<span class='chapter-number'>4</span>  <span class='chapter-title'>Capítulo 1. Error en el Cálculo Numérico</span>"
     ]
