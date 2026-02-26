@@ -170,6 +170,16 @@
     ]
   },
   {
+    "objectID": "capitulo2.html",
+    "href": "capitulo2.html",
+    "title": "5  Capítulo 2. Solución de Ecuaciones No Lineales",
+    "section": "",
+    "text": "6 Introducción\nEn muchos problemas científicos y de ingeniería aparece la necesidad de resolver ecuaciones de la forma:\n\\[f(x)=0\\]\nCuando la ecuación no puede resolverse de forma analítica, se emplean métodos numéricos iterativos para aproximar sus raíces.\nUn método iterativo genera una sucesión:\n\\[\\{x_n\\}_{n=0}^\\infty\\] tal que: \\[\\lim_{n\\rightarrow \\infty} x_n=\\alpha\\] donde \\(\\alpha\\) es una raíz de \\(f(x)\\).\n\n\n7 Orden y tasa de convergencia\nSea \\(\\alpha\\) la raíz exacta y definamos el error:\n\\[e_n=x_n-\\alpha\\]\nUn método tiene orden de convergencia \\(p\\) si existe una constante \\(C&gt;0\\) tal que:\n\\[\\lim_{n\\rightarrow \\infty} \\frac{|e_{n+1}|}{|e_n|^p}=C\\]\n\nSi \\(p=1\\) entonces tiene convergencia lineal.\nSi \\(p=2\\) entonces tiene convergencia cuadrática.\nSi \\(p&gt;1\\) entonces tiene convergencia superlineal.\n\n\n\n\n\n\n\nEjemplo Si: \\[e_{n+1}\\approx Ce_n^2\\] entonces el error se cuadra en cada iteración (convergencia cuadrática).\n\n\n\n\n\n8 Método de Punto Fijo\nPartimos de:\n\\[f(x)=0\\]\nReescribimos como:\n\\[x=g(x)\\]\nEl esquema iterativo es:\n\\[x_{n+1}=g(x_n)\\] El fundamento matemático es el siguiente:\n\n\n\n\n\n\nTeorema Teorema de Fermat\nSi \\(f(c)\\) es un punto extremo de \\(f\\) en un intervalo \\(I\\), \\(c\\) está en el interior de \\(I\\) y \\(f'(c)=0\\) existe, entonces \\(f'(c)=0\\).\n\n\n\n\n\n\n\n\n\nTeorema Si \\(f\\) es continua en un intervalo cerrado \\([a, b]\\), entonces existe un punto \\(x_0\\in [a, b]\\) para el cual \\[f(x_0)\\geq f(x), \\ \\forall x\\in [a,b]\\]\n\n\n\n\n\n\n\n\n\nTeorema Si \\(f\\) es continua en un intervalo cerrado \\([a, b]\\), entonces existe un punto \\(x'_0\\in [a, b]\\) para el cual \\[f(x'_0)\\leq f(x), \\ \\forall x\\in [a,b]\\]\n\n\n\n\n\n\n\n\n\nTeorema Teorema de Rolle\nSi \\(f\\) continua en el intervalo cerrado \\([a,b]\\), diferenciable en el intervalo abierto \\((a,b)\\) y \\(f(a)=f(b)\\), entonces existe un número \\(c\\in (a,b)\\) tal que \\(f'(c)=0\\).\n\n\n\n\n\n\n\n\n\nTeorema",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Capítulo 2. Solución de Ecuaciones No Lineales</span>"
+    ]
+  },
+  {
     "objectID": "references.html",
     "href": "references.html",
     "title": "References",
@@ -182,31 +192,31 @@
   {
     "objectID": "anexo.html",
     "href": "anexo.html",
-    "title": "5  Anexo",
+    "title": "6  Anexo",
     "section": "",
-    "text": "6 R\nNavegar a https://cloud.r-project.org/ descargar el paquete que corresponda a su sistema.\nNavegar a https://posit.co/download/rstudio-desktop/ descargar el paquete que corresponda a su sistema.",
+    "text": "7 R\nNavegar a https://cloud.r-project.org/ descargar el paquete que corresponda a su sistema.\nNavegar a https://posit.co/download/rstudio-desktop/ descargar el paquete que corresponda a su sistema.",
     "crumbs": [
-      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Anexo</span>"
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Anexo</span>"
     ]
   },
   {
     "objectID": "anexo.html#r-sintaxis",
     "href": "anexo.html#r-sintaxis",
-    "title": "5  Anexo",
-    "section": "6.1 R sintaxis",
-    "text": "6.1 R sintaxis\nLa sintaxis en R de los textos, usa una o doble comillas:\n\n\"Métodos Numéricos\"\n\n[1] \"Métodos Numéricos\"\n\n\nLos números sin las comillas\n\n02\n\n[1] 2\n\n2025\n\n[1] 2025\n\n438\n\n[1] 438\n\n\nSi queremos imprimir un resultado en la consola usamos la funcón print(). Esta función está presente en otros lenguajes de programación, como Python.\n\nprint(\"Panamá\")\n\n[1] \"Panamá\"",
+    "title": "6  Anexo",
+    "section": "7.1 R sintaxis",
+    "text": "7.1 R sintaxis\nLa sintaxis en R de los textos, usa una o doble comillas:\n\n\"Métodos Numéricos\"\n\n[1] \"Métodos Numéricos\"\n\n\nLos números sin las comillas\n\n02\n\n[1] 2\n\n2025\n\n[1] 2025\n\n438\n\n[1] 438\n\n\nSi queremos imprimir un resultado en la consola usamos la funcón print(). Esta función está presente en otros lenguajes de programación, como Python.\n\nprint(\"Panamá\")\n\n[1] \"Panamá\"",
     "crumbs": [
-      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Anexo</span>"
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Anexo</span>"
     ]
   },
   {
     "objectID": "anexo.html#operadores-aritméticos",
     "href": "anexo.html#operadores-aritméticos",
-    "title": "5  Anexo",
-    "section": "6.2 Operadores aritméticos",
-    "text": "6.2 Operadores aritméticos\n\n\n\nOperador\nNombre\nEjemplo\n\n\n\n\n+\nAdición\nx+y\n\n\n-\nSustracción\nx-y\n\n\n*\nMultiplicación\nx*y\n\n\n/\nDivisión\nx/y\n\n\n^\nExponente\nx^y\n\n\n%%\nModulo\nx%%y\n\n\n%/%\nDivisión entera\nx%/%y",
+    "title": "6  Anexo",
+    "section": "7.2 Operadores aritméticos",
+    "text": "7.2 Operadores aritméticos\n\n\n\nOperador\nNombre\nEjemplo\n\n\n\n\n+\nAdición\nx+y\n\n\n-\nSustracción\nx-y\n\n\n*\nMultiplicación\nx*y\n\n\n/\nDivisión\nx/y\n\n\n^\nExponente\nx^y\n\n\n%%\nModulo\nx%%y\n\n\n%/%\nDivisión entera\nx%/%y",
     "crumbs": [
-      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Anexo</span>"
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Anexo</span>"
     ]
   }
 ]

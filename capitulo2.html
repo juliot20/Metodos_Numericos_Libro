@@ -6,8 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Julio Trujillo">
 
-<title>3&nbsp; Summary – Metodos_Numericos_Libro</title>
+<title>5&nbsp; Capítulo 2. Solución de Ecuaciones No Lineales – Metodos_Numericos_Libro</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,41 +21,6 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-html { -webkit-text-size-adjust: 100%; }
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 </style>
 
 
@@ -65,8 +31,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./capitulo1.html" rel="next">
-<link href="./intro.html" rel="prev">
+<link href="./references.html" rel="next">
+<link href="./capitulo1.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
@@ -106,6 +72,35 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -118,7 +113,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./summary.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Summary</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./capitulo2.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Capítulo 2. Solución de Ecuaciones No Lineales</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -159,7 +154,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./summary.html" class="sidebar-item-text sidebar-link active">
+  <a href="./summary.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Summary</span></span></a>
   </div>
 </li>
@@ -171,7 +166,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./capitulo2.html" class="sidebar-item-text sidebar-link">
+  <a href="./capitulo2.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Capítulo 2. Solución de Ecuaciones No Lineales</span></span></a>
   </div>
 </li>
@@ -192,21 +187,35 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#introducción" id="toc-introducción" class="nav-link active" data-scroll-target="#introducción"><span class="header-section-number">6</span> Introducción</a></li>
+  <li><a href="#orden-y-tasa-de-convergencia" id="toc-orden-y-tasa-de-convergencia" class="nav-link" data-scroll-target="#orden-y-tasa-de-convergencia"><span class="header-section-number">7</span> Orden y tasa de convergencia</a></li>
+  <li><a href="#método-de-punto-fijo" id="toc-método-de-punto-fijo" class="nav-link" data-scroll-target="#método-de-punto-fijo"><span class="header-section-number">8</span> Método de Punto Fijo</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Summary</span></h1>
+<h1 class="title"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Capítulo 2. Solución de Ecuaciones No Lineales</span></h1>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Julio Trujillo </p>
+          </div>
+  </div>
     
   
     
@@ -217,15 +226,99 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<p>In summary, this book has no content whatsoever.</p>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span> <span class="sc">+</span> <span class="dv">1</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 2</code></pre>
+<section id="introducción" class="level1" data-number="6">
+<h1 data-number="6"><span class="header-section-number">6</span> Introducción</h1>
+<p>En muchos problemas científicos y de ingeniería aparece la necesidad de resolver ecuaciones de la forma:</p>
+<p><span class="math display">\[f(x)=0\]</span></p>
+<p>Cuando la ecuación no puede resolverse de forma analítica, se emplean métodos numéricos iterativos para aproximar sus raíces.</p>
+<p>Un método iterativo genera una sucesión:</p>
+<p><span class="math display">\[\{x_n\}_{n=0}^\infty\]</span> tal que: <span class="math display">\[\lim_{n\rightarrow \infty} x_n=\alpha\]</span> donde <span class="math inline">\(\alpha\)</span> es una raíz de <span class="math inline">\(f(x)\)</span>.</p>
+</section>
+<section id="orden-y-tasa-de-convergencia" class="level1" data-number="7">
+<h1 data-number="7"><span class="header-section-number">7</span> Orden y tasa de convergencia</h1>
+<p>Sea <span class="math inline">\(\alpha\)</span> la raíz exacta y definamos el error:</p>
+<p><span class="math display">\[e_n=x_n-\alpha\]</span></p>
+<p>Un método tiene orden de convergencia <span class="math inline">\(p\)</span> si existe una constante <span class="math inline">\(C&gt;0\)</span> tal que:</p>
+<p><span class="math display">\[\lim_{n\rightarrow \infty} \frac{|e_{n+1}|}{|e_n|^p}=C\]</span></p>
+<ul>
+<li><p>Si <span class="math inline">\(p=1\)</span> entonces tiene convergencia lineal.</p></li>
+<li><p>Si <span class="math inline">\(p=2\)</span> entonces tiene convergencia cuadrática.</p></li>
+<li><p>Si <span class="math inline">\(p&gt;1\)</span> entonces tiene convergencia superlineal.</p></li>
+</ul>
+<div class="callout callout-style-simple callout-tip">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-body-container">
+<p><strong>Ejemplo</strong> Si: <span class="math display">\[e_{n+1}\approx Ce_n^2\]</span> entonces el error se cuadra en cada iteración (convergencia cuadrática).</p>
+</div>
+</div>
+</div>
+</section>
+<section id="método-de-punto-fijo" class="level1" data-number="8">
+<h1 data-number="8"><span class="header-section-number">8</span> Método de Punto Fijo</h1>
+<p>Partimos de:</p>
+<p><span class="math display">\[f(x)=0\]</span></p>
+<p>Reescribimos como:</p>
+<p><span class="math display">\[x=g(x)\]</span></p>
+<p>El esquema iterativo es:</p>
+<p><span class="math display">\[x_{n+1}=g(x_n)\]</span> El fundamento matemático es el siguiente:</p>
+<div class="callout callout-style-simple callout-important">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-body-container">
+<p><strong>Teorema</strong> Teorema de Fermat</p>
+<p>Si <span class="math inline">\(f(c)\)</span> es un punto extremo de <span class="math inline">\(f\)</span> en un intervalo <span class="math inline">\(I\)</span>, <span class="math inline">\(c\)</span> está en el interior de <span class="math inline">\(I\)</span> y <span class="math inline">\(f'(c)=0\)</span> existe, entonces <span class="math inline">\(f'(c)=0\)</span>.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-simple callout-important">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-body-container">
+<p><strong>Teorema</strong> Si <span class="math inline">\(f\)</span> es continua en un intervalo cerrado <span class="math inline">\([a, b]\)</span>, entonces existe un punto <span class="math inline">\(x_0\in [a, b]\)</span> para el cual <span class="math display">\[f(x_0)\geq f(x), \ \forall x\in [a,b]\]</span></p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-simple callout-important">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-body-container">
+<p><strong>Teorema</strong> Si <span class="math inline">\(f\)</span> es continua en un intervalo cerrado <span class="math inline">\([a, b]\)</span>, entonces existe un punto <span class="math inline">\(x'_0\in [a, b]\)</span> para el cual <span class="math display">\[f(x'_0)\leq f(x), \ \forall x\in [a,b]\]</span></p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-simple callout-important">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-body-container">
+<p><strong>Teorema</strong> Teorema de Rolle</p>
+<p>Si <span class="math inline">\(f\)</span> continua en el intervalo cerrado <span class="math inline">\([a,b]\)</span>, diferenciable en el intervalo abierto <span class="math inline">\((a,b)\)</span> y <span class="math inline">\(f(a)=f(b)\)</span>, entonces existe un número <span class="math inline">\(c\in (a,b)\)</span> tal que <span class="math inline">\(f'(c)=0\)</span>.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-simple callout-important">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-body-container">
+<p><strong>Teorema</strong></p>
+</div>
 </div>
 </div>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -630,13 +723,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./intro.html" class="pagination-link" aria-label="Introduction">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Introduction</span></span>
+      <a href="./capitulo1.html" class="pagination-link" aria-label="Capítulo 1. Error en el Cálculo Numérico">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Capítulo 1. Error en el Cálculo Numérico</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./capitulo1.html" class="pagination-link" aria-label="Capítulo 1. Error en el Cálculo Numérico">
-        <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Capítulo 1. Error en el Cálculo Numérico</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./references.html" class="pagination-link" aria-label="References">
+        <span class="nav-page-text">References</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
