@@ -1,0 +1,90 @@
+---
+title: "Capítulo 2. Solución de Ecuaciones No Lineales"
+author: "Julio Trujillo"
+format:
+  html:
+    toc: true
+    toc-depth: 3
+  pdf:
+    toc: true
+---
+
+# Introducción
+
+En muchos problemas científicos y de ingeniería aparece la necesidad de resolver ecuaciones de la forma:
+
+$$f(x)=0$$
+
+Cuando la ecuación no puede resolverse de forma analítica, se emplean métodos numéricos iterativos para aproximar sus raíces.
+
+Un método iterativo genera una sucesión:
+
+$$\{x_n\}_{n=0}^\infty$$ tal que: $$\lim_{n\rightarrow \infty} x_n=\alpha$$ donde $\alpha$ es una raíz de $f(x)$.
+
+# Orden y tasa de convergencia
+
+Sea $\alpha$ la raíz exacta y definamos el error:
+
+$$e_n=x_n-\alpha$$
+
+Un método tiene orden de convergencia $p$ si existe una constante $C>0$ tal que:
+
+$$\lim_{n\rightarrow \infty} \frac{|e_{n+1}|}{|e_n|^p}=C$$
+
+-   Si $p=1$ entonces tiene convergencia lineal.
+
+-   Si $p=2$ entonces tiene convergencia cuadrática.
+
+-   Si $p>1$ entonces tiene convergencia superlineal.
+
+::: {.callout-tip appearance="simple"}
+**Ejemplo** Si: $$e_{n+1}\approx Ce_n^2$$ entonces el error se cuadra en cada iteración (convergencia cuadrática).
+:::
+
+# Método de Punto Fijo
+
+Partimos de:
+
+$$f(x)=0$$
+
+Reescribimos como:
+
+$$x=g(x)$$
+
+El esquema iterativo es:
+
+$$x_{n+1}=g(x_n)$$
+El fundamento matemático es el siguiente:
+
+::: {.callout-important appearance="simple"}
+**Teorema**
+Teorema de Fermat
+
+Si $f(c)$ es un punto extremo de $f$ en un intervalo $I$, $c$ está en el interior de $I$ y $f'(c)=0$ existe, entonces $f'(c)=0$.
+:::
+
+::: {.callout-important appearance="simple"}
+**Teorema**
+Si $f$ es continua en un intervalo cerrado $[a, b]$, entonces existe un punto $x_0\in [a, b]$ para el cual
+$$f(x_0)\geq f(x), \ \forall x\in [a,b]$$
+:::
+
+
+::: {.callout-important appearance="simple"}
+**Teorema**
+Si $f$ es continua en un intervalo cerrado $[a, b]$, entonces existe un punto $x'_0\in [a, b]$ para el cual
+$$f(x'_0)\leq f(x), \ \forall x\in [a,b]$$
+:::
+
+
+::: {.callout-important appearance="simple"}
+**Teorema**
+Teorema de Rolle
+
+Si $f$ continua en el intervalo cerrado $[a,b]$, diferenciable en el intervalo abierto $(a,b)$ y $f(a)=f(b)$, entonces existe un número $c\in (a,b)$ tal que $f'(c)=0$.
+:::
+
+
+::: {.callout-important appearance="simple"}
+**Teorema**
+:::
